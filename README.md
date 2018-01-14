@@ -5,7 +5,7 @@ Kernel build with lot of patches from Hans De Goede. You can find his repository
 [Hans De Goede Kernel Repository](https://github.com/jwrdegoede/linux-sunxi.git)
 
 Many thanks for hard work to [Simone alias @stockmind](https://github.com/stockmind) and your perfect repo [gpd-pocket-ubuntu-respin](https://github.com/stockmind/gpd-pocket-ubuntu-respin).
-This kernel is newest version and i use this repository with Ubuntu 16.04 on my own GPD Pocket.
+This kernel is newest version than his repo and I use this repository with Ubuntu 16.04 on my own GPD Pocket.
 
 # Install
 ```
