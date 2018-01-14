@@ -51,3 +51,6 @@ cd /tmp/gpd-pocket-kernel
 sudo dpkg -i *.deb
 sudo update-grub
 ```
+
+# Older kernel relases
+If you want download and install my older kernel evrsion, you can download from my [Google drive](https://drive.google.com/drive/folders/1XmwYXIRxsdo4GZti8woYtvhOI1pvXB9c) and install manually.
