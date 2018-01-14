@@ -35,6 +35,7 @@ Copy and overwrite my .config to directory ./linux-sunxi
 
 If you have already donwloaded the repository, you can update it with latest commits issuing:
 ```
+make clean
 git fetch origin
 git reset --hard origin/master
 ```
