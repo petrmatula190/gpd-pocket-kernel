@@ -4,7 +4,7 @@ This is my repository with ubuntu kernel for GPD Pocket.
 Kernel build with lot of patches from Hans De Goede. You can find his repository here:
 [Hans De Goede Kernel Repository](https://github.com/jwrdegoede/linux-sunxi.git)
 
-Many thanks for hard work to [Simone alias Stockmind @stockmind](https://github.com/stockmind) and your perfect repo [gpd-pocket-ubuntu-respin](https://github.com/stockmind/gpd-pocket-ubuntu-respin).
+Many thanks for hard work to [Simone alias @stockmind](https://github.com/stockmind) and your perfect repo [gpd-pocket-ubuntu-respin](https://github.com/stockmind/gpd-pocket-ubuntu-respin).
 This kernel is newest version and i use this repository with Ubuntu 16.04 on my own GPD Pocket.
 
 # Install
