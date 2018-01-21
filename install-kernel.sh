@@ -8,7 +8,7 @@ cd /tmp/gpd-pocket-kernel
 
 if [ ! -f "gpd-pocket-kernel-files.tar.gz" ]; then
 	 echo "Downloading kernel files...."
-	 curl -L https://drive.google.com/uc?id=1gPIhwbS-Imo7fty0gV06fETxDXI6T4zL -o "gpd-pocket-kernel-files.tar.gz"
+	 curl -L https://drive.google.com/uc?id=1qOn7_2LV7mCPRhjKdNo_eeLcI6vtkoKR -o "gpd-pocket-kernel-files.tar.gz"
 fi
 
 echo "Extracting kernel files..."
