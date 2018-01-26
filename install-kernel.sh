@@ -13,29 +13,33 @@ if [ -d "gpd-pocket-kernel" ]; then
 	rm -rf /tmp/gpd-pocket-kernel
 fi
 
-mkdir -p /tmp/gpd-pocket-kernel
+if [ ! $FILE_COUNT -gt 1 ]; then
+	
+	mkdir -p /tmp/gpd-pocket-kernel
 
-if [ $FILE_COUNT -eq 1 ]; then
-	 echo "Manual downloaded kernel found..."
-	 mv gpd-pocket-kernel-*.tar.gz /tmp/gpd-pocket-kernel/gpd-pocket-kernel-files.tar.gz
-	 cd /tmp/gpd-pocket-kernel	 
-elif [ $FILE_COUNT -gt 1 ]; then
-	echo "Manual downloaded kernel found, but more than one. Please leave only one in /tmp directory!"	 
+	if [ $FILE_COUNT -eq 1 ]; then
+		 echo "Manual downloaded kernel found..."
+		 mv gpd-pocket-kernel-*.tar.gz /tmp/gpd-pocket-kernel/gpd-pocket-kernel-files.tar.gz
+		 cd /tmp/gpd-pocket-kernel	 	 
+	else
+		 echo "Downloading kernel files...."
+		 cd /tmp/gpd-pocket-kernel
+		 curl -L https://drive.google.com/uc?id=$URL_ID -o "gpd-pocket-kernel-files.tar.gz"
+	fi
+
+	echo "Extracting kernel files..."
+	tar -xvzf  gpd-pocket-kernel-*.tar.gz 
+
+	echo "Installing new kernel..."
+	sudo dpkg -i *.deb
+
+	echo "Update grub..."
+	sudo update-grub
+
+	rm -rfd /tmp/gpd-pocket-kernel
+	
 else
-	 echo "Downloading kernel files...."
-	 cd /tmp/gpd-pocket-kernel
-	 curl -L https://drive.google.com/uc?id=$URL_ID -o "gpd-pocket-kernel-files.tar.gz"
+	echo "Manual downloaded kernel found, but more than one. Please leave only one in /tmp directory!"
 fi
-
-echo "Extracting kernel files..."
-tar -xvzf  gpd-pocket-kernel-*.tar.gz 
-
-echo "Installing new kernel..."
-sudo dpkg -i *.deb
-
-echo "Update grub..."
-sudo update-grub
-
-rm -rfd /tmp/gpd-pocket-kernel
 
 cd $CURRENT_DIR
