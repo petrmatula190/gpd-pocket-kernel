@@ -54,4 +54,4 @@ sudo update-grub
 ```
 
 # Older kernel relases
-If you want download and install my older kernel version, you can download from my [Google drive](https://drive.google.com/drive/folders/1XmwYXIRxsdo4GZti8woYtvhOI1pvXB9c). My script ca install it automatically, if you put downloaded kernel archive into /tmp directory and run update script install-kernel.sh.
+If you want download and install my older kernel version, you can download from my [Google drive](https://drive.google.com/drive/folders/1XmwYXIRxsdo4GZti8woYtvhOI1pvXB9c). My script can install it automatically, if you put downloaded kernel archive into /tmp directory and run update script install-kernel.sh.
