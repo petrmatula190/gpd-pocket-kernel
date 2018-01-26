@@ -22,11 +22,11 @@ elif [ $FILE_COUNT -gt 1 ]; then
 	echo "Manual downloaded kernel found, but more than one. Please leave only one in /tmp directory!"		 
 else
 	 echo "Downloading kernel files...."
-	 cd /tmp/gpd-pocket-kernel
 	 curl -L https://drive.google.com/uc?id=$URL_ID -o "gpd-pocket-kernel-files.tar.gz"
 	 
 fi
 
+cd /tmp/gpd-pocket-kernel
 
 echo "Extracting kernel files..."
 tar -xvzf  gpd-pocket-kernel-*.tar.gz 
