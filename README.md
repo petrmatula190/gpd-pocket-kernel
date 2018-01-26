@@ -31,7 +31,7 @@ Fisrt, install tools and clone Hans repo
 sudo apt-get install build-essential git libncurses5-dev libssl-dev libelf-dev
 git clone https://github.com/jwrdegoede/linux-sunxi.git
 ```
-Copy and overwrite my .config to directory ./linux-sunxi
+Copy and overwrite my `.config` to directory ./linux-sunxi
 
 If you have already donwloaded the repository, you can update it with latest commits issuing:
 ```
@@ -46,7 +46,7 @@ cd linux-sunxi/
 make clean
 make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION=-custom-matlala-DD-MM-YYYY
 ```
-After few minutes (or hour), copy generated .deb files to another direcroty (for exmaple /tmp/gpd-pocket-kernel) and install with
+After few minutes (or hour, depend on HW), compress all generated .deb files into a tar.gz archive with name "gpd-pocket-kernel-files.tar.gz", put it into `/tmp` directory and run `install-kernel.sh`.
 ```
 cd /tmp/gpd-pocket-kernel
 sudo dpkg -i *.deb
@@ -54,4 +54,4 @@ sudo update-grub
 ```
 
 # Older kernel relases
-If you want download and install my older kernel version, you can download from my [Google drive](https://drive.google.com/drive/folders/1XmwYXIRxsdo4GZti8woYtvhOI1pvXB9c) and install manually.
+If you want download and install my older kernel version, you can download from my [Google drive](https://drive.google.com/drive/folders/1XmwYXIRxsdo4GZti8woYtvhOI1pvXB9c). My script can install it automatically, if you put downloaded kernel archive into `/tmp` directory and run `install-kernel.sh`.
