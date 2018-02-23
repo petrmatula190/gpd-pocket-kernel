@@ -28,7 +28,7 @@ You must have free around 5-10GiB space on disk for download and build kernel. S
 
 Fisrt, install tools and clone Hans repo
 ```
-sudo apt-get install build-essential git libncurses5-dev libssl-dev libelf-dev
+sudo apt-get install build-essential git libncurses5-dev libssl-dev libelf-dev bison flex
 git clone https://github.com/jwrdegoede/linux-sunxi.git
 ```
 Copy and overwrite my `.config` to directory ./linux-sunxi
