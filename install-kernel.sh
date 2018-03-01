@@ -2,7 +2,7 @@
 #!/bin/bash
 
 #gpd-pocket-kernel-4.16rc3-01-03-2018
-URL_ID="1xgxkBAefczKp4gH5VZLRxPh85N1heHyE"
+URL_ID="1puyxtcBBNi04QUkmTfkmCYEvH74pc9Ch"
 
 CURRENT_DIR="$( cd "$(dirname "$0")" ; pwd -P )"
 FILE_COUNT="$(find /tmp/ -maxdepth 1 -type f -name 'gpd-pocket-kernel-*.tar.gz' | wc -l)"
