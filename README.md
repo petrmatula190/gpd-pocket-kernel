@@ -7,6 +7,31 @@ Kernel build with lot of patches from Hans De Goede. You can find his repository
 Many thanks for hard work to [Simone alias @stockmind](https://github.com/stockmind) and your perfect repo [gpd-pocket-ubuntu-respin](https://github.com/stockmind/gpd-pocket-ubuntu-respin).
 This kernel is newest version than his repo and I use this repository with Ubuntu 16.04 on my own GPD Pocket.
 
+# Know Bugs
+Do not use Ubuntu 16.04 and kernel 4.16+ with disabled DPTF (unlocked BIOS). 
+Kernel fan driver not working with disabled DPTF and python fan script no longer working too, because kernel should change some security options for GPIO pins (used for set fan speed). Ubuntu 16.04 with enabled DPTF have total stucks and I cannot find reason (logs not writen while total stuck). 
+Ubuntu 17.04+ do not have this issue and you can leave DPTF enabled and use gpdfan ekrnel driver wthout isues.
+
+```
+$ systemctl status gpdfand.service
+● gpdfand.service - GPD Fan Daemon
+   Loaded: loaded (/etc/systemd/system/gpdfand.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Čt 2018-03-08 18:32:57 CET; 5min ago
+  Process: 1305 ExecStart=/usr/local/sbin/gpdfand --time=${TIME} --turbo=${TURBO} --min=${MIN} --med=${MED} --max=${MAX} (code=exited, status=1/FAILURE)
+ Main PID: 1305 (code=exited, status=1/FAILURE)
+
+bře 08 18:32:56 gpdpocket systemd[1]: Started GPD Fan Daemon.
+bře 08 18:32:57 gpdpocket gpdfand[1305]: Traceback (most recent call last):
+bře 08 18:32:57 gpdpocket gpdfand[1305]:   File "/usr/local/sbin/gpdfand", line 76, in <module>
+bře 08 18:32:57 gpdpocket gpdfand[1305]:     set_fans(0,1)
+bře 08 18:32:57 gpdpocket gpdfand[1305]:   File "/usr/local/sbin/gpdfand", line 46, in set_fans
+bře 08 18:32:57 gpdpocket gpdfand[1305]:     gpio.write(unicode(a))
+bře 08 18:32:57 gpdpocket gpdfand[1305]: IOError: [Errno 1] Operation not permitted
+bře 08 18:32:57 gpdpocket systemd[1]: gpdfand.service: Main process exited, code=exited, status=1/FAILURE
+bře 08 18:32:57 gpdpocket systemd[1]: gpdfand.service: Unit entered failed state.
+bře 08 18:32:57 gpdpocket systemd[1]: gpdfand.service: Failed with result 'exit-code'.
+```
+
 # Install
 ```
 git clone https://github.com/petrmatula190/gpd-pocket-kernel
