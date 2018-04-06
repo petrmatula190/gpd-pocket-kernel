@@ -1,8 +1,8 @@
 #This script automatically download and install/update my kernel
 #!/bin/bash
 
-#gpd-pocket-kernel-4.16rc6-29-03-2018
-URL_ID="1KhAILN5e-hPhqVlPZZqRNfwiK-e36EGI"
+#gpd-pocket-kernel-4.16.0-05-04-2018
+URL_ID="1mBKprI6IWQqHhiYvE1wa7TMY56SV1Q7-"
 
 CURRENT_DIR="$( cd "$(dirname "$0")" ; pwd -P )"
 FILE_COUNT="$(find /tmp/ -maxdepth 1 -type f -name 'gpd-pocket-kernel-*.tar.gz' | wc -l)"
