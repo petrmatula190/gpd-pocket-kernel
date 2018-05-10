@@ -1,26 +1,45 @@
 #This script automatically download and install/update my kernel
 #!/bin/bash
 
+#gpd-pocket-kernel-4.17.0rc3-09-05-2018
+URL_ID="1GFWwsCohW_nWmtd_6fUmOc4L1HX81a4"
+
 CURRENT_DIR="$( cd "$(dirname "$0")" ; pwd -P )"
+FILE_COUNT="$(find /tmp/ -maxdepth 1 -type f -name 'gpd-pocket-kernel-*.tar.gz' | wc -l)"
 
-mkdir -p /tmp/gpd-pocket-kernel
-cd /tmp/gpd-pocket-kernel
+cd /tmp
 
-if [ ! -f "gpd-pocket-kernel-files.tar.gz" ]; then
-	 echo "Downloading kernel files...."
-	 curl -L https://drive.google.com/uc?id=13spiPSa5057JIcGoC811xyH25v7Cd4K3 -o "gpd-pocket-kernel-files.tar.gz"
+if [ -d "gpd-pocket-kernel" ]; then
+	rm -rf /tmp/gpd-pocket-kernel
 fi
 
-echo "Extracting kernel files..."
-tar -xvzf  gpd-pocket-kernel-*.tar.gz 
+if [ ! $FILE_COUNT -gt 1 ]; then
+	
+	mkdir -p /tmp/gpd-pocket-kernel
 
-echo "Installing new kernel..."
-sudo dpkg -i *.deb
+	if [ $FILE_COUNT -eq 1 ]; then
+		 echo "Manual downloaded kernel found..."
+		 mv gpd-pocket-kernel-*.tar.gz /tmp/gpd-pocket-kernel/gpd-pocket-kernel-files.tar.gz
+		 cd /tmp/gpd-pocket-kernel	 	 
+	else
+		 echo "Downloading kernel files...."
+		 cd /tmp/gpd-pocket-kernel
+		 curl -L https://drive.google.com/uc?id=$URL_ID -o "gpd-pocket-kernel-files.tar.gz"
+	fi
 
-echo "Update grub..."
-sudo update-grub
+	echo "Extracting kernel files..."
+	tar -xvzf  gpd-pocket-kernel-*.tar.gz 
 
-rm *.deb gpd-pocket-kernel-files.tar.gz 
-rm -rfd /tmp/gpd-pocket-kernel
+	echo "Installing new kernel..."
+	sudo dpkg -i *.deb
+
+	echo "Update grub..."
+	sudo update-grub
+
+	rm -rfd /tmp/gpd-pocket-kernel
+	
+else
+	echo "Manual downloaded kernel found, but more than one. Please leave only one in /tmp directory!"
+fi
 
 cd $CURRENT_DIR
