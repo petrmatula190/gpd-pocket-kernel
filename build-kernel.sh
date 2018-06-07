@@ -5,7 +5,7 @@ version=$(sed -n '3p' .config | cut -d' ' -f 3)
 builddate=$(date +%d-%m-%Y)
 buildname="custom-matlala"
 cd linux-sunxi/ # start folder
-make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION=-buildname=-$buildname-$builddate # build
+make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION=-$buildname=-$buildname-$builddate # build
 cd .. 
 mkdir kernel-$buildname-$version-$builddate
 mv linux-*-$buildname-$builddate* ./kernel-custom-matlala-$version-$builddate
