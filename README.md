@@ -36,7 +36,7 @@ bře 08 18:32:57 gpdpocket systemd[1]: gpdfand.service: Failed with result 'exit
 ```
 git clone https://github.com/petrmatula190/gpd-pocket-kernel
 cd gpd-pocket-kernel/
-chmod +x install-kernel.sh
+chmod +x install-kernel.sh build-kernel.sh
 ./install-kernel.sh
 ```
 
@@ -76,6 +76,16 @@ After few minutes (or hour, depend on HW), compress all generated .deb files int
 cd /tmp/gpd-pocket-kernel
 sudo dpkg -i *.deb
 sudo update-grub
+```
+
+# My automated build script
+If you want more automatic process, run build.kernel.sh and update .config manually when yo will promt.
+I created this script for me and there is for everybody. Version number will be extracted from.config file (3rd line and 3rd column). Script must be started from folder ./linux-sunxi and final product will be tar.gz file gpd-pocket-kernel-$version-$builddate.tar.gz in ./../linux-sunxi/.
+```
+make clean
+git fetch origin
+git reset --hard origin/master
+./build.kernel.sh
 ```
 
 # Older kernel relases
