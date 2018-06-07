@@ -8,6 +8,8 @@ Many thanks for hard work to [Simone alias @stockmind](https://github.com/stockm
 This kernel is newest version than his repo and I use this repository with Ubuntu 16.04 on my own GPD Pocket.
 
 # Know Bugs
+Check [buglist in testing branch](https://github.com/petrmatula190/gpd-pocket-kernel/blob/petrmatula190-testing/know-bugst). I wrote something about every my released test build.
+
 Do not use Ubuntu 16.04 and kernel 4.16+ with disabled DPTF (unlocked BIOS). 
 Kernel fan driver not working with disabled DPTF and python fan script no longer working too, because kernel should change some security options for GPIO pins (used for set fan speed). Ubuntu 16.04 with enabled DPTF have total stucks and I cannot find reason (logs not writen while total stuck). 
 Ubuntu 17.04+ do not have this issue and you can leave DPTF enabled and use gpdfan ekrnel driver wthout isues.
@@ -47,7 +49,7 @@ git pull
 ./install-kernel.sh
 ```
 
-# Build own kernel with my .config
+# Build own kernel with my .config - Manual way
 
 You must have free around 5-10GiB space on disk for download and build kernel. Sources files have around 2.5GiB.
 
@@ -78,15 +80,14 @@ sudo dpkg -i *.deb
 sudo update-grub
 ```
 
-# My automated build script
-If you want more automatic process, run build.kernel.sh and update .config manually when yo will promt.
-I created this script for me and there is for everybody. Version number will be extracted from.config file (3rd line and 3rd column). Script must be started from folder ./linux-sunxi and final product will be tar.gz file gpd-pocket-kernel-$version-$builddate.tar.gz in ./../linux-sunxi/.
-```
-make clean
-git fetch origin
-git reset --hard origin/master
-./build.kernel.sh
-```
+# Build own kernel with my .config - Automatic build script way
+If you want more automatic process, run `build.kernel.sh` and edit `.config` manually and conform build when yo will promt.
+I created this script for me and there is for everybody. Version number will be extracted from `.config` file (3rd line and 3rd column). Script must be started from folder ./linux-sunxi and final product will be tar.gz file `gpd-pocket-kernel-$version-$builddate.tar.gz` in `./../linux-sunxi/`.
+
 
 # Older kernel relases
 If you want download and install my older kernel version, you can download from my [Google drive](https://drive.google.com/drive/folders/1XmwYXIRxsdo4GZti8woYtvhOI1pvXB9c). My script can install it automatically, if you put downloaded kernel archive into `/tmp` directory and run `install-kernel.sh`.
+
+# Do you want be tester
+I have [testing branch](https://github.com/petrmatula190/gpd-pocket-kernel/tree/petrmatula190-testing) and two testers on opposite sides of Eatch. Do you want be next? 
+It can be little bit dangerous, but I have not time, knowlenge and HW for testing everything (BT and exotic HW for example). SO I will be hapy If you try new build and report bugs on github (or you can add me on skype/facebook) let me message in [issues page](https://github.com/petrmatula190/gpd-pocket-kernel/issues).
