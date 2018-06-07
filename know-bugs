@@ -1,3 +1,3 @@
-4.17.0-rc6 from 25-05-2018
+4.16rc6-29-03-2018 and newest
 Charging after resume not working and /sys/class/power_supply/fusb302-typec-source/ not exist. So you can try ebaable in .config.
 Check additional information https://github.com/petrmatula190/gpd-pocket-kernel/commit/08dadf32597745e7fc49a5b7398144f725d7479d
