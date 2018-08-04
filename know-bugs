@@ -1,3 +1,7 @@
+4.18.0-rc7-03-08-2018
+All seems to be OK, only FUSB302 change patch /sys/class/power_supply/fusb302-typec-source/ -> /sys/class/power_supply/tcpm-source-psy-i2c-fusb302/
+I need longer time to testing.
+
 4.16rc6-29-03-2018 and newest
 Charging after resume not working and file patch /sys/class/power_supply/fusb302-typec-source/ not longer exist. New file path is   /sys/class/power_supply/tcpm-source-psy-i2c-fusb302/
 Check additional information https://github.com/petrmatula190/gpd-pocket-kernel/commit/08dadf32597745e7fc49a5b7398144f725d7479d
