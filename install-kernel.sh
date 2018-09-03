@@ -1,13 +1,8 @@
 #This script automatically download and install/update my kernel
 #!/bin/bash
 
-#gpd-pocket-kernel-4.16rc6-29-03-2018
-URL_ID="1KhAILN5e-hPhqVlPZZqRNfwiK-e36EGI"
-
-#remove afected kernel releases - broken charging only on 5V/3A
-echo "Remove my kernel with broken charging, please reboot if script remove something..."
-sudo apt-get purge linux-*custom-matlala-16-04-2018*
-
+#gpd-pocket-kernel-4.18.0-rc8-26-08-2018
+URL_ID="1ywtx7Qgaph8OIqzalQbrIYUjBtqGvXdn"
 
 CURRENT_DIR="$( cd "$(dirname "$0")" ; pwd -P )"
 FILE_COUNT="$(find /tmp/ -maxdepth 1 -type f -name 'gpd-pocket-kernel-*.tar.gz' | wc -l)"
