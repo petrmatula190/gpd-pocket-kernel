@@ -80,7 +80,7 @@ sudo dpkg -i *.deb
 sudo update-grub
 ```
 
-# Automatic build own kerne wth my script
+# Automatic build own kernel with my script
 If you want more automatic process, run `build.kernel.sh` and edit `.config` manually and conform build when yo will promt.
 I created this script for me and there is for everybody. Version number will be extracted from `.config` file (3rd line and 3rd column). Script must be started from folder ./linux-sunxi and final product will be tar.gz file `gpd-pocket-kernel-$version-$builddate.tar.gz` in `./../linux-sunxi/`.
 
