@@ -1,3 +1,7 @@
+# Development stopped
+I sell my GPD Pocket 1 and bought GPD Pocket 2, which have 100% support in mainline kernel and working above the expectations. It is sad, but I must stop developing and close my github repo. Thanks yor sharing and your siupport, you is a part of BIG linux comunity!
+Peter 
+
 # Ubuntu kernel for GPD Pocket
 This is my repository with ubuntu kernel for GPD Pocket. 
 
